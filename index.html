@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stilly Home Services | Interior &amp; Exterior Painting — Arlington &amp; Stanwood, WA</title>
+<meta name="description" content="Professional interior and exterior painting for homes in Arlington, Stanwood, and greater Snohomish County. Owner-operated, clean, detailed work. Free quotes.">
+<style>
+  /* ============================================================
+     BRAND COLORS — change these two lines to match your logo.
+     --brand   = main color (buttons, headings, footer)
+     --accent  = highlight color (call-to-action, links)
+     ============================================================ */
+  :root{
+    --brand:#1f3a5f;      /* deep slate blue */
+    --brand-dark:#152840;
+    --accent:#e07a2f;     /* warm orange */
+    --accent-dark:#c4661d;
+    --ink:#1c2430;
+    --muted:#5a6473;
+    --line:#e3e7ee;
+    --bg:#ffffff;
+    --bg-soft:#f5f7fa;
+    --radius:12px;
+    --maxw:1080px;
+    font-size:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.6;background:var(--bg)}
+  a{color:var(--accent);text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  .btn{display:inline-block;background:var(--accent);color:#fff;padding:14px 26px;border-radius:var(--radius);font-weight:700;border:none;cursor:pointer;font-size:1rem;transition:background .15s}
+  .btn:hover{background:var(--accent-dark)}
+  .btn-ghost{background:transparent;border:2px solid #fff;color:#fff}
+  .btn-ghost:hover{background:rgba(255,255,255,.12)}
+  h1,h2,h3{color:var(--brand);line-height:1.2;font-weight:800}
+  h2{font-size:1.9rem;margin-bottom:10px}
+  .section{padding:70px 0}
+  .section.soft{background:var(--bg-soft)}
+  .lead{color:var(--muted);font-size:1.1rem;max-width:640px;margin:0 auto 40px;text-align:center}
+  .center{text-align:center}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;max-width:var(--maxw);margin:0 auto}
+  .brand-lockup{display:flex;align-items:center;gap:12px}
+  /* LOGO: replace the .logo-mark div below with <img src="logo.png" class="logo-img"> */
+  .logo-mark{width:44px;height:44px;border-radius:10px;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.1rem;letter-spacing:.5px}
+  .logo-img{height:44px;width:auto}
+  .brand-name{font-weight:800;color:var(--brand);font-size:1.15rem;line-height:1.1}
+  .brand-name small{display:block;font-weight:600;color:var(--muted);font-size:.72rem;letter-spacing:.5px}
+  .nav-links{display:flex;gap:24px;align-items:center}
+  .nav-links a{color:var(--ink);font-weight:600}
+  .nav-cta{background:var(--accent);color:#fff;padding:9px 18px;border-radius:8px}
+  .nav-cta:hover{background:var(--accent-dark)}
+  @media(max-width:760px){.nav-links a:not(.nav-cta){display:none}}
+
+  /* Hero */
+  .hero{background:linear-gradient(135deg,var(--brand),var(--brand-dark));color:#fff;padding:80px 0 90px}
+  .hero .wrap{text-align:center}
+  .hero h1{color:#fff;font-size:2.7rem;margin-bottom:16px}
+  .hero p{font-size:1.2rem;color:#d7e0ee;max-width:640px;margin:0 auto 30px}
+  .hero-badges{margin-top:26px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:7px 15px;border-radius:999px;font-size:.85rem;font-weight:600}
+  .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  @media(max-width:560px){.hero h1{font-size:2rem}}
+
+  /* Services */
+  .grid{display:grid;gap:22px}
+  .services-grid{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:820px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.services-grid{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+  .card h3{font-size:1.15rem;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.95rem}
+  .card .ic{font-size:1.7rem;margin-bottom:10px}
+
+  /* Why us */
+  .why-grid{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:820px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:460px){.why-grid{grid-template-columns:1fr}}
+  .why-item{text-align:center;padding:10px}
+  .why-item .num{font-size:1.5rem}
+  .why-item h3{font-size:1.05rem;margin:10px 0 4px}
+  .why-item p{color:var(--muted);font-size:.9rem}
+
+  /* Gallery */
+  .gallery{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:700px){.gallery{grid-template-columns:repeat(2,1fr)}}
+  .photo-slot{aspect-ratio:4/3;background:var(--bg-soft);border:2px dashed var(--line);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:.85rem;text-align:center;padding:12px}
+
+  /* Service area */
+  .area-list{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:760px;margin:0 auto}
+  .area-list span{background:#fff;border:1px solid var(--line);padding:8px 16px;border-radius:999px;font-weight:600;font-size:.9rem;color:var(--brand)}
+
+  /* Quote form */
+  .quote{background:var(--brand);color:#fff}
+  .quote h2{color:#fff}
+  .quote .lead{color:#cdd8e8}
+  .form-card{background:#fff;border-radius:16px;padding:32px;max-width:560px;margin:0 auto;color:var(--ink)}
+  .form-row{display:flex;gap:14px}
+  @media(max-width:520px){.form-row{flex-direction:column}}
+  .field{margin-bottom:16px;flex:1}
+  .field label{display:block;font-weight:700;font-size:.85rem;margin-bottom:6px;color:var(--ink)}
+  .field input,.field textarea,.field select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:1rem;font-family:inherit}
+  .field textarea{resize:vertical;min-height:110px}
+  .form-card .btn{width:100%}
+  .form-note{font-size:.8rem;color:var(--muted);text-align:center;margin-top:12px}
+
+  /* Contact strip */
+  .contact-strip{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+  .contact-strip a,.contact-strip span{color:var(--ink);font-weight:700;font-size:1.05rem}
+
+  /* Footer */
+  footer{background:var(--brand-dark);color:#c3cddb;padding:40px 0;text-align:center;font-size:.9rem}
+  footer .brand-name{color:#fff}
+  footer a{color:#fff}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="nav">
+    <div class="brand-lockup">
+      <!-- Replace this box with your logo:  <img src="logo.png" class="logo-img" alt="Stilly Home Services"> -->
+      <div class="logo-mark">SH</div>
+      <div class="brand-name">Stilly Home Services<small>ARLINGTON &amp; STANWOOD, WA</small></div>
+    </div>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#area">Service Area</a>
+      <a href="#why">Why Us</a>
+      <a href="#quote" class="nav-cta">Free Quote</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <h1>Professional Painting for Snohomish County Homes</h1>
+    <p>Interior &amp; exterior painting done clean, detailed, and on time. Owner-operated in the Arlington and Stanwood area.</p>
+    <div class="hero-cta">
+      <a href="#quote" class="btn">Get a Free Quote</a>
+      <!-- Update phone: change 0000000000 in href and the visible text once you have your number -->
+      <a href="tel:0000000000" class="btn btn-ghost">Call [YOUR PHONE]</a>
+    </div>
+    <div class="hero-badges">
+      <span class="badge">✓ Interior &amp; Exterior</span>
+      <span class="badge">✓ Spray, Mask &amp; Fine Finish</span>
+      <span class="badge">✓ Free Estimates</span>
+      <span class="badge">✓ Locally Owned</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section" id="services">
+  <div class="wrap">
+    <h2 class="center">What We Do</h2>
+    <p class="lead">Quality work with careful prep, clean masking, and a professional finish — inside and out.</p>
+    <div class="grid services-grid">
+      <div class="card"><div class="ic">🏠</div><h3>Interior Painting</h3><p>Walls, ceilings, trim, and baseboards. Careful masking and clean lines in every room.</p></div>
+      <div class="card"><div class="ic">🖌️</div><h3>Exterior Painting</h3><p>Siding, trim, and doors sprayed and finished to protect and refresh your home's curb appeal.</p></div>
+      <div class="card"><div class="ic">🚪</div><h3>Cabinet &amp; Trim Finishing</h3><p>Smooth, durable finishes on cabinets, trim, and millwork for a factory-quality look.</p></div>
+      <div class="card"><div class="ic">🔧</div><h3>Prep &amp; Repair</h3><p>Drywall patching, caulking, sanding, and surface prep so the paint lasts and looks right.</p></div>
+      <div class="card"><div class="ic">🌲</div><h3>Deck &amp; Fence Staining</h3><p>Staining and sealing to protect outdoor wood from Pacific Northwest weather.</p></div>
+      <div class="card"><div class="ic">🪚</div><h3>Finish Carpentry</h3><p>Trim, molding, and small cabinetry installs to finish a space the right way.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section class="section soft" id="why">
+  <div class="wrap">
+    <h2 class="center">Why Homeowners Choose Stilly</h2>
+    <p class="lead">You're hiring the owner — not a rotating crew. That means accountability on every job.</p>
+    <div class="grid why-grid">
+      <div class="why-item"><div class="num">👷</div><h3>Owner-Operated</h3><p>You deal directly with me from quote to final walkthrough.</p></div>
+      <div class="why-item"><div class="num">🎯</div><h3>Detail-Focused</h3><p>Clean masking, sharp lines, and thorough prep on every project.</p></div>
+      <div class="why-item"><div class="num">🗣️</div><h3>Clear Communication</h3><p>Straight answers, honest timelines, and no surprises.</p></div>
+      <div class="why-item"><div class="num">📍</div><h3>Local &amp; Reliable</h3><p>Based right here in the Stillaguamish Valley, serving your neighbors.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="section" id="work">
+  <div class="wrap">
+    <h2 class="center">Recent Work</h2>
+    <p class="lead">Photos of your completed jobs go here — before/afters build trust fast.</p>
+    <div class="grid gallery">
+      <!-- Replace each slot with: <img src="job1.jpg" alt="Interior painting Arlington"> -->
+      <div class="photo-slot">Add photo — e.g. interior repaint</div>
+      <div class="photo-slot">Add photo — e.g. exterior / siding</div>
+      <div class="photo-slot">Add photo — e.g. cabinets / trim</div>
+      <div class="photo-slot">Add photo — before</div>
+      <div class="photo-slot">Add photo — after</div>
+      <div class="photo-slot">Add photo — a finished room</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE AREA ============ -->
+<section class="section soft" id="area">
+  <div class="wrap">
+    <h2 class="center">Areas We Serve</h2>
+    <p class="lead">Proudly serving Arlington, Stanwood, and the surrounding Snohomish County communities.</p>
+    <div class="area-list">
+      <span>Arlington</span><span>Stanwood</span><span>Smokey Point</span><span>Marysville</span>
+      <span>Silvana</span><span>Lakewood</span><span>Warm Beach</span><span>Camano Island</span>
+      <span>Darrington</span><span>Granite Falls</span><span>Lake Stevens</span><span>Snohomish</span>
+      <span>Everett</span><span>Mount Vernon</span><span>Sedro-Woolley</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUOTE FORM ============ -->
+<section class="section quote" id="quote">
+  <div class="wrap">
+    <h2 class="center">Request a Free Quote</h2>
+    <p class="lead">Tell me about your project and I'll get back to you with an estimate.</p>
+    <div class="form-card">
+      <form id="quoteForm">
+        <div class="form-row">
+          <div class="field"><label for="name">Name</label><input type="text" id="name" name="name" required></div>
+          <div class="field"><label for="phone">Phone</label><input type="tel" id="phone" name="phone" required></div>
+        </div>
+        <div class="field"><label for="email">Email</label><input type="email" id="email" name="email"></div>
+        <div class="field">
+          <label for="service">Project Type</label>
+          <select id="service" name="service">
+            <option>Interior Painting</option>
+            <option>Exterior Painting</option>
+            <option>Cabinet / Trim Finishing</option>
+            <option>Deck / Fence Staining</option>
+            <option>Finish Carpentry</option>
+            <option>Other / Not Sure</option>
+          </select>
+        </div>
+        <div class="field"><label for="message">Project Details</label><textarea id="message" name="message" placeholder="Rooms, square footage, timeline, or anything else that helps."></textarea></div>
+        <button type="submit" class="btn">Send My Request</button>
+        <p class="form-note">Prefer to talk? Email <a href="mailto:aaron@raincityathletics.training">aaron@raincityathletics.training</a> or call [YOUR PHONE].</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT + FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="brand-name" style="justify-content:center;margin-bottom:14px;">Stilly Home Services</div>
+    <div class="contact-strip">
+      <a href="mailto:aaron@raincityathletics.training">📧 aaron@raincityathletics.training</a>
+      <span>📞 [YOUR PHONE]</span>
+      <span>📍 Arlington &amp; Stanwood, WA</span>
+    </div>
+    <p style="margin-top:22px;opacity:.7">© <span id="yr"></span> Stilly Home Services · Interior &amp; Exterior Painting · Finish Carpentry · Licensed &amp; Insured</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* ============================================================
+     QUOTE FORM — works with ZERO setup.
+     On submit it opens the visitor's email app with the details
+     pre-filled, addressed to you. No account, no backend needed.
+
+     WANT SUBMISSIONS TO ARRIVE AUTOMATICALLY (nicer experience)?
+     1. Make a free account at formspree.io
+     2. Replace the whole <script> handler below by giving the
+        <form> tag:  action="https://formspree.io/f/YOUR_ID" method="POST"
+        and deleting this JS block.
+     ============================================================ */
+  var BUSINESS_EMAIL = "aaron@raincityathletics.training"; // <-- change if you get a Stilly email
+  document.getElementById('quoteForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var f = e.target;
+    var subject = "Quote Request — " + (f.service.value) + " — " + (f.name.value);
+    var body =
+      "Name: " + f.name.value + "\n" +
+      "Phone: " + f.phone.value + "\n" +
+      "Email: " + f.email.value + "\n" +
+      "Project Type: " + f.service.value + "\n\n" +
+      "Details:\n" + f.message.value;
+    window.location.href = "mailto:" + BUSINESS_EMAIL +
+      "?subject=" + encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(body);
+  });
+</script>
+</body>
+</html>
