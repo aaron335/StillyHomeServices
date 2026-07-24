@@ -8,6 +8,3 @@ Thumbs.db
 
 # Node (only if you later add tooling)
 node_modules/
-
-# Local editing tool — do not deploy
-editor.html
