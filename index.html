@@ -36,7 +36,11 @@
   .lead{color:var(--muted);font-size:1.1rem;max-width:640px;margin:0 auto 40px;text-align:center}
   .center{text-align:center}
   .rule{width:64px;height:4px;background:var(--sky);border-radius:4px;margin:0 auto 26px}
-  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line)}
+  .promo{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:center;gap:9px;height:44px;background:var(--ink);color:#fff;font-weight:600;font-size:.9rem;text-align:center;padding:0 14px;white-space:nowrap;overflow:hidden}
+  .promo b{color:var(--sky);font-weight:700}
+  .promo .promo-cta{background:var(--sky-deep);color:#fff;padding:4px 13px;border-radius:999px;font-weight:700;font-size:.82rem}
+  @media(max-width:520px){.promo{font-size:.78rem;gap:7px}.promo .promo-cta{padding:3px 10px;font-size:.76rem}}
+  header{position:sticky;top:44px;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;max-width:var(--maxw);margin:0 auto}
   .brand-lockup{display:flex;align-items:center;gap:12px;text-decoration:none}
   .brand-logo{height:60px;width:auto;display:block}
@@ -103,6 +107,7 @@
 </style>
 </head>
 <body>
+<a class="promo" href="/giveaway.html">🎨 <b>Win a FREE paint job</b> — enter by Aug 31 <span class="promo-cta">Enter&nbsp;→</span></a>
 <header><div class="nav">
   <a class="brand-lockup" href="#" aria-label="Stilly Home Services LLC — home"><img src="logo.png" alt="Stilly Home Services LLC" class="brand-logo"></a>
   <nav class="nav-links"><a href="#services">Services</a><a href="#area">Service Area</a><a href="#why">Why Us</a><a href="#quote" class="nav-cta">Free Quote</a></nav>
