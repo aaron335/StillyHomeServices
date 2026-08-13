@@ -83,6 +83,13 @@
   .field input:focus,.field textarea:focus{outline:none;border-color:var(--sky-deep);box-shadow:0 0 0 3px rgba(14,134,190,.15)}
   .form-card .btn{width:100%}
   .form-note{font-size:.8rem;color:var(--muted);text-align:center;margin-top:12px}
+  .share-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:620px;margin:0 auto}
+  .share-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:10px;font-weight:700;font-size:.98rem;cursor:pointer;border:none;font-family:inherit;text-decoration:none}
+  .share-btn.fb{background:#1877f2;color:#fff}
+  .share-btn.sms{background:var(--sky-deep);color:#fff}
+  .share-btn.email{background:#fff;color:var(--sky-deeper);border:1.5px solid var(--line)}
+  .share-btn.copy{background:var(--ink);color:#fff}
+  .share-btn:hover{opacity:.9}
 
   /* Rules */
   .rules{max-width:720px;margin:0 auto;color:var(--muted);font-size:.9rem;line-height:1.7;text-align:center}
@@ -169,6 +176,7 @@
         <div class="field"><label for="phone">Phone</label><input type="tel" id="phone" name="phone" required></div>
       </div>
       <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
+      <div class="field"><label for="referral">Referred by <span style="color:var(--muted);font-weight:500">(optional)</span></label><input type="text" id="referral" name="referred_by" placeholder="Name of the friend who sent you"></div>
       <div class="field"><label for="photos">Photo of your room <span style="color:var(--muted);font-weight:500">(optional)</span></label><input type="file" id="photos" name="attachment" accept="image/*" multiple><p class="form-note" style="text-align:left;margin-top:6px">Up to 10MB total — a photo helps us picture your space.</p></div>
       <button type="submit" class="btn">Enter to Win →</button>
       <p class="form-note">By entering you agree to be contacted about your entry. No purchase necessary.</p>
@@ -176,11 +184,24 @@
   </div>
 </div></section>
 
+<!-- ============ SHARE / BONUS ENTRIES ============ -->
+<section class="section soft" id="share"><div class="wrap">
+  <h2 class="center">Get <span class="accent">Bonus Entries</span></h2>
+  <div class="rule"></div>
+  <p class="lead">Share the giveaway with friends and neighbors. For every friend who enters and names you under "Referred by," you get another entry — more shares, more chances to win.</p>
+  <div class="share-row">
+    <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.stillyhomeservices.com%2Fgiveaway.html" target="_blank" rel="noopener">📘 Share on Facebook</a>
+    <a class="share-btn sms" href="sms:?&amp;body=Enter%20to%20win%20a%20free%20paint%20job%20from%20Stilly%20Home%20Services%21%20https%3A%2F%2Fwww.stillyhomeservices.com%2Fgiveaway.html">💬 Text a Friend</a>
+    <a class="share-btn email" href="mailto:?subject=Win%20a%20free%20paint%20job&amp;body=Enter%20this%20giveaway%20from%20Stilly%20Home%20Services%3A%20https%3A%2F%2Fwww.stillyhomeservices.com%2Fgiveaway.html">✉️ Email</a>
+    <button class="share-btn copy" type="button" id="copyBtn">🔗 Copy Link</button>
+  </div>
+</div></section>
+
 <!-- ============ RULES ============ -->
 <section class="section"><div class="wrap">
   <div class="rules">
     <h3>Giveaway Details</h3>
-    <p>No purchase necessary to enter or win. Open to homeowners 18 or older in Snohomish County, WA. One entry per household. Entries close August 31, 2026. The winner will be selected at random and notified by phone or email within 7 days. Prize covers one project from the list shown on this page (a single room or one focused surface); exact scope is confirmed with the winner and does not include full-house exterior repaints or multiple rooms. Prize is non-transferable and has no cash value. Stilly Home Services LLC reserves the right to modify or end this promotion at any time. This giveaway is not sponsored or endorsed by any social media platform.</p>
+    <p>No purchase necessary to enter or win. Open to homeowners 18 or older in Snohomish County, WA. One entry per household. Entries close August 31, 2026. The winner will be selected at random and notified by phone or email within 7 days. Prize covers one project from the list shown on this page (a single room or one focused surface); exact scope is confirmed with the winner and does not include full-house exterior repaints or multiple rooms. Prize is non-transferable and has no cash value. Bonus entries are awarded when a new entrant lists your name under "Referred by." Stilly Home Services LLC reserves the right to modify or end this promotion at any time. This giveaway is not sponsored or endorsed by any social media platform.</p>
   </div>
 </div></section>
 
@@ -195,6 +216,10 @@
   <p class="fineprint">© <span id="yr"></span> Stilly Home Services LLC · Interior &amp; Exterior Painting · Licensed &amp; Insured</p>
 </div></footer>
 
-<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+var _cb=document.getElementById('copyBtn');
+if(_cb){_cb.addEventListener('click',function(){navigator.clipboard.writeText('https://www.stillyhomeservices.com/giveaway.html').then(function(){_cb.textContent='✓ Link Copied!';setTimeout(function(){_cb.textContent='🔗 Copy Link';},2000);});});}
+</script>
 </body>
 </html>
