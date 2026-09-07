@@ -11,6 +11,16 @@
   gtag('js', new Date());
   gtag('config', 'G-JW2PWCGVGZ');
   gtag('config', 'AW-18345306111');
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') { window.location = url; }
+    };
+    gtag('event', 'conversion', {
+      'send_to': 'AW-18345306111/T_clCILe6-scEP_P3KtE',
+      'event_callback': callback
+    });
+    return false;
+  }
 </script>
 <title>Stilly Home Services LLC | Painting, Remodels &amp; Home Services — Arlington &amp; Stanwood, WA</title>
 <meta name="description" content="Painting, finish carpentry, remodels, and landscaping &amp; hardscaping for homes in Arlington, Stanwood, and greater Snohomish County. Owner-operated, licensed &amp; insured. Free quotes.">
@@ -157,7 +167,7 @@ document.getElementById('yr').textContent=new Date().getFullYear();
     e.preventDefault();
     var btn=document.getElementById('quoteSubmit');
     btn.disabled=true; btn.textContent='Sending…';
-    if(typeof gtag==='function'){gtag('event','conversion',{'send_to':'AW-18345306111/T_clCILe6-scEP_P3KtE'});}
+    if(typeof gtag_report_conversion==='function'){gtag_report_conversion();}
     var fd=new FormData(form); fd.append('fvv','1'); fd.append('pageHistory','0');
     var done=false;
     function finish(){ if(done)return; done=true;
