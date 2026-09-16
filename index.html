@@ -22,6 +22,23 @@
     return false;
   }
 </script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1635383254853395');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1635383254853395&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <title>Stilly Home Services LLC | Painting, Remodels &amp; Home Services — Arlington &amp; Stanwood, WA</title>
 <meta name="description" content="Painting, finish carpentry, remodels, and landscaping &amp; hardscaping for homes in Arlington, Stanwood, and greater Snohomish County. Owner-operated, licensed &amp; insured. Free quotes.">
 <link rel="icon" type="image/png" href="favicon.png">
@@ -168,6 +185,7 @@ document.getElementById('yr').textContent=new Date().getFullYear();
     var btn=document.getElementById('quoteSubmit');
     btn.disabled=true; btn.textContent='Sending…';
     if(typeof gtag_report_conversion==='function'){gtag_report_conversion();}
+    if(typeof fbq==='function'){fbq('track','Lead');}
     var fd=new FormData(form); fd.append('fvv','1'); fd.append('pageHistory','0');
     var done=false;
     function finish(){ if(done)return; done=true;
