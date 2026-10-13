@@ -184,11 +184,26 @@ src="https://www.facebook.com/tr?id=1635383254853395&ev=PageView&noscript=1"
 <div class="quote-thanks" id="quoteThanks" hidden><h3>Thanks — your request is in! ✅</h3><p>I’ll review the details and get back to you with an estimate, usually within a day. Need me sooner? Call or text <a href="tel:4252382226">(425) 238-2226</a>.</p></div>
 </div></div></section>
 <footer><div class="wrap"><div class="foot-brand">Stilly Home Services LLC</div>
-<div class="contact-strip"><a href="mailto:aaron@stillyhomeservices.com">📧 aaron@stillyhomeservices.com</a><span>📞 (425) 238-2226</span><span>📍 Based in Arlington, WA</span></div>
+<div class="contact-strip"><a href="mailto:aaron@stillyhomeservices.com">📧 aaron@stillyhomeservices.com</a><a href="tel:4252382226">📞 (425) 238-2226</a><span>📍 Based in Arlington, WA</span></div>
 <p style="margin-top:16px"><a href="privacy.html" style="color:#c3cddb;font-weight:600">Privacy Policy</a></p>
 <p style="margin-top:12px;opacity:.7">© <span id="yr"></span> Stilly Home Services LLC · Painting · Finish Carpentry · Remodels · Licensed &amp; Insured · WA Reg. #STILLHS741NG</p></div></footer>
 <script>
 document.getElementById('yr').textContent=new Date().getFullYear();
+// Call-button tracking: fires on every tap of a tel: link
+(function(){
+  // Optional: paste the label of a Google Ads "Phone call clicks" conversion action here, e.g. 'AW-18345306111/AbC123xyz'
+  var ADS_CALL_CONVERSION='';
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="tel:"]');
+    if(!a)return;
+    var where=a.closest('.hero')?'hero':a.closest('#quote')?'quote_thanks':a.closest('footer')?'footer':'other';
+    if(typeof gtag==='function'){
+      gtag('event','phone_call_click',{link_location:where,link_url:a.getAttribute('href')});
+      if(ADS_CALL_CONVERSION){gtag('event','conversion',{send_to:ADS_CALL_CONVERSION});}
+    }
+    if(typeof fbq==='function'){fbq('track','Contact',{content_name:'Call button - '+where});}
+  });
+})();
 (function(){
   var form=document.getElementById('quoteForm');
   if(!form)return;
