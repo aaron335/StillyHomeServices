@@ -2,8 +2,17 @@
   "rewrites": [
     {
       "source": "/",
-      "has": [{ "type": "host", "value": "editor.stillyhomeservices.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "editor.stillyhomeservices.com"
+        }
+      ],
       "destination": "/editor.html"
+    },
+    {
+      "source": "/winter",
+      "destination": "/winter.html"
     }
   ]
 }
