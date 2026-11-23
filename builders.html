@@ -236,7 +236,7 @@ src="https://www.facebook.com/tr?id=1635383254853395&ev=PageView&noscript=1"
 <form id="quoteForm">
 <div class="form-row"><div class="field"><label for="q_name">Name</label><input type="text" id="q_name" name="entry.871916533" autocomplete="name" required></div><div class="field"><label for="q_phone">Phone</label><input type="tel" id="q_phone" name="entry.735276716" autocomplete="tel" required></div></div>
 <div class="field"><label for="q_email">Email</label><input type="email" id="q_email" name="entry.1575802156" autocomplete="email"></div>
-<div class="field"><label for="q_service">Project Type</label><select id="q_service" name="entry.1470500769" required><option selected>Painting (Interior / Exterior)</option><option>Cabinet &amp; Trim Finishing</option><option>Finish Carpentry</option><option>Remodel / Renovation</option><option>Deck / Fence Staining</option><option>Other / Not Sure</option></select></div>
+<div class="field"><label for="q_service">Project Type</label><select id="q_service" name="entry.1470500769" required><option value="Painting (Interior / Exterior)" selected>Painting (Interior / Exterior)</option><option value="Other / Not Sure">Drywall Repair</option><option value="Finish Carpentry">Trim Install &amp; Finish Work</option><option value="Cabinet &amp; Trim Finishing">Cabinet Painting</option><option value="Deck / Fence Staining">Deck / Fence Staining</option><option value="Other / Not Sure">Small Job / Repair</option><option value="Other / Not Sure">Other / Not Sure</option></select></div>
 <div class="field"><label for="q_message">Project Details</label><textarea id="q_message" name="entry.1159218360" placeholder="What you need done, your town, and your timeline."></textarea></div>
 <button type="submit" class="btn" id="quoteSubmit">Send My Request</button>
 <p class="form-note">Prefer to talk? Email <a href="mailto:aaron@stillyhomeservices.com">aaron@stillyhomeservices.com</a> or call (425) 238-2226.</p>
@@ -246,8 +246,8 @@ src="https://www.facebook.com/tr?id=1635383254853395&ev=PageView&noscript=1"
 <nav class="mbar" aria-label="Quick contact"><a href="tel:4252382226" class="m-call">📞 Call</a><a href="sms:+14252382226" class="m-text">💬 Text</a><a href="#quote" class="m-quote">Free Quote</a></nav>
 <footer><div class="wrap"><div class="foot-brand">Stilly Home Services LLC</div>
 <div class="contact-strip"><a href="mailto:aaron@stillyhomeservices.com">📧 aaron@stillyhomeservices.com</a><a href="tel:4252382226">📞 (425) 238-2226</a><span>📍 Based in Arlington, WA</span></div>
-<div class="foot-links"><a href="/">Home</a><a href="/interior-painting">Interior Painting</a><a href="/cabinet-painting">Cabinet Painting</a><a href="/exterior-painting">Exterior Painting</a><a href="/builders">Builders &amp; Property Managers</a><a href="/privacy">Privacy Policy</a></div>
-<p style="margin-top:12px;opacity:.7">© <span id="yr"></span> Stilly Home Services LLC · Painting · Finish Carpentry · Remodels · Licensed &amp; Insured · WA Reg. #STILLHS741NG</p></div></footer>
+<div class="foot-links"><a href="/">Home</a><a href="/interior-painting">Interior Painting</a><a href="/cabinet-painting">Cabinet Painting</a><a href="/exterior-painting">Exterior Painting</a><a href="/drywall-repair">Drywall Repair</a><a href="/trim-finish-carpentry">Trim &amp; Finish Work</a><a href="/builders">Builders &amp; Property Managers</a><a href="/privacy">Privacy Policy</a></div>
+<p style="margin-top:12px;opacity:.7">© <span id="yr"></span> Stilly Home Services LLC · Painting · Drywall Repair · Trim &amp; Finish Work · Licensed &amp; Insured · WA Reg. #STILLHS741NG</p></div></footer>
 <script>
 document.getElementById('yr').textContent=new Date().getFullYear();
 // Call/text-button tracking: fires on every tap of a tel: or sms: link
@@ -277,7 +277,7 @@ document.getElementById('yr').textContent=new Date().getFullYear();
     if(typeof gtag_report_conversion==='function'){gtag_report_conversion();}
     if(typeof gtag==='function'){gtag('event','generate_lead',{page:'builders'});}
     if(typeof fbq==='function'){fbq('track','Lead');}
-    var fd=new FormData(form); fd.set('entry.1159218360',(fd.get('entry.1159218360')||'')+'\n\n[Sent from /builders]'); fd.append('fvv','1'); fd.append('pageHistory','0');
+    var sel=document.getElementById('q_service'); var fd=new FormData(form); fd.set('entry.1159218360','Project: '+sel.options[sel.selectedIndex].text+'\n'+(fd.get('entry.1159218360')||'')+'\n\n[Sent from /builders]'); fd.append('fvv','1'); fd.append('pageHistory','0');
     var done=false;
     function finish(){ if(done)return; done=true;
       form.hidden=true;
