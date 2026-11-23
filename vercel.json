@@ -1,4 +1,5 @@
 {
+  "cleanUrls": true,
   "rewrites": [
     {
       "source": "/",
@@ -8,13 +9,39 @@
           "value": "editor.stillyhomeservices.com"
         }
       ],
-      "destination": "/editor.html"
+      "destination": "/editor"
     }
   ],
   "redirects": [
-    { "source": "/winter", "destination": "/", "permanent": false },
-    { "source": "/winter.html", "destination": "/", "permanent": false },
-    { "source": "/giveaway", "destination": "/", "permanent": false },
-    { "source": "/giveaway.html", "destination": "/", "permanent": false }
+    {
+      "source": "/winter",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/winter.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/giveaway",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/giveaway.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/review",
+      "destination": "https://share.google/Dun568NH9OdXtkx7m",
+      "permanent": false
+    },
+    {
+      "source": "/reviews",
+      "destination": "https://share.google/Dun568NH9OdXtkx7m",
+      "permanent": false
+    }
   ]
 }
