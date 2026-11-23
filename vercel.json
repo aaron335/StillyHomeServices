@@ -9,10 +9,12 @@
         }
       ],
       "destination": "/editor.html"
-    },
-    {
-      "source": "/winter",
-      "destination": "/winter.html"
     }
+  ],
+  "redirects": [
+    { "source": "/winter", "destination": "/", "permanent": false },
+    { "source": "/winter.html", "destination": "/", "permanent": false },
+    { "source": "/giveaway", "destination": "/", "permanent": false },
+    { "source": "/giveaway.html", "destination": "/", "permanent": false }
   ]
 }
